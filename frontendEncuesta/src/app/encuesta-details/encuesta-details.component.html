@@ -1,0 +1,33 @@
+<app-menu></app-menu>
+
+<div align="center">
+
+<h2>Detalles Respuesta a Encuesta</h2> 
+
+<hr/>
+<div *ngIf="encuesta">
+  <div>
+    <label><b>Id: </b></label> {{encuesta.id}}
+  </div>
+  <div>
+    <label><b>No. de documento: </b></label> {{encuesta.numeroDocumento}}
+  </div>
+  <div>
+    <label><b>Email: </b></label> {{encuesta.correo}}
+  </div>  
+  <div>
+    <label><b>Comentarios: </b></label> {{encuesta.comentarios}}
+  </div>  
+  <div>
+    <label><b>Marca favorita de PC: </b></label> {{encuesta.marcaPC.marca}}
+  </div>  
+  <div>
+    <label><b>Fecha de respuesta: </b></label> {{encuesta.fechaRespuesta}}
+  </div>    
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Listar Respuestas a Encuesta</button><br>
+
+</div>

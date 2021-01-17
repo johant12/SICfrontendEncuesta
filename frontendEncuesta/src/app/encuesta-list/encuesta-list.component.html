@@ -1,0 +1,37 @@
+<app-menu></app-menu>
+
+<div align="center">
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Listado Respuestas</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>No. de documento</th>
+          <th>Email </th>
+          <th>Comentarios </th>
+          <th>Marca favorita de PC</th>
+          <th>Fecha de respuesta </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let encuesta of encuestas | async">
+          <td>{{encuesta.numeroDocumento}}</td>
+          <td>{{encuesta.correo}}</td>
+          <td>{{encuesta.comentarios}}</td>
+          <td>{{encuesta.marcaPC.marca}}</td>
+          <td>{{encuesta.fechaRespuesta}}</td>
+          <td><button (click)="encuestaDetails(encuesta.id)" class="btn btn-warning" style="margin-left: 10px">Detalles</button>
+          	  <button (click)="updateEncuesta(encuesta.id)" class="btn btn-info" style="margin-left: 10px">Actualizar</button>
+              <button (click)="deleteEncuesta(encuesta.id)" class="btn btn-danger"  style="margin-left: 10px">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div>

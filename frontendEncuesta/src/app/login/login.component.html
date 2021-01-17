@@ -1,0 +1,24 @@
+<app-menu></app-menu>
+<div class="container col-lg-6">
+    <h1 class="text-center">Inicio de sesi&oacute;n</h1>
+    <div class="card">
+      <div class="card-body">
+        <form class="form-group">
+          <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+          <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
+          <div class="form-group">
+            <label for="email">Usuario (encuesta) :</label>
+            <input type="text" class="form-control" id="username" [(ngModel)]="username" placeholder="Por favor ingrese el usuario"
+              name="username">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Contrase&ntilde;a (encuesta):</label>
+            <input type="password" class="form-control" [(ngModel)]="password" id="password" placeholder="Por favor ingrese la contrase&ntilde;a"
+              name="password">
+          </div>
+          <button (click)=handleLogin() class="btn btn-success">Iniciar Sesi&oacute;n</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
